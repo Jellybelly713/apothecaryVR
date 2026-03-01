@@ -1,8 +1,4 @@
-##################################################
-# UNITY PROJECT (inside Apothecary/)
-##################################################
-
-# Generated folders (NEVER commit)
+# UNITY PROJECT
 Apothecary/[Ll]ibrary/
 Apothecary/[Tt]emp/
 Apothecary/[Oo]bj/
@@ -13,17 +9,11 @@ Apothecary/[Uu]ser[Ss]ettings/
 Apothecary/[Mm]emoryCaptures/
 Apothecary/[Rr]ecordings/
 
-##################################################
 # UNITY GENERATED FILES
-##################################################
-
 *.log
 sysinfo.txt
 
-##################################################
 # IDE / EDITOR FILES
-##################################################
-
 .vs/
 .idea/
 .consulo/
@@ -43,52 +33,31 @@ sysinfo.txt
 *.opendb
 *.VC.db
 
-##################################################
 # VS CODE
-##################################################
-
 .vscode/*
 !.vscode/settings.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-##################################################
 # RIDER
-##################################################
-
 Apothecary/Assets/Plugins/Editor/JetBrains*
 
-##################################################
 # ANDROID / MOBILE
-##################################################
-
 .gradle/
 *.apk
 *.aab
 
-##################################################
 # IOS / MAC BUILDS
-##################################################
-
 *.app
 
-##################################################
 # UNITY EXPORTS
-##################################################
-
 *.unitypackage
 
-##################################################
-# ADDRESSABLES (if used)
-##################################################
-
+# ADDRESSABLES
 Apothecary/Assets/AddressableAssetsData/*/*.bin*
 Apothecary/Assets/StreamingAssets/aa*
 Apothecary/Assets/StreamingAssets/aa.meta
 
-##################################################
 # MISC
-##################################################
-
 ExportedObj/
 crashlytics-build.properties
