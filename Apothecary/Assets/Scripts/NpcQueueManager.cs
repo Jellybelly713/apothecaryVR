@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NpcQueueManager : MonoBehaviour
 {
-    // Queue positions in order: Slot_0 = front of the line at the window
+    // Slot_0 = front of the line at the window
     [SerializeField] private Transform[] slots;
 
     [SerializeField] private float glideSpeed = 4.5f;
@@ -12,18 +12,15 @@ public class NpcQueueManager : MonoBehaviour
 
     // Stores NPCs
     private readonly List<NpcQueueMember> members = new List<NpcQueueMember>();
-
-    // Queue direction
     private bool forward = true;
 
     // Prevents multiple shifts from happening at the same time
     private bool isShifting;
-
-    // Total number slots
     public int Capacity => slots != null ? slots.Length : 0;
 
     // True if the line is full
     public bool IsFull => slots != null && members.Count >= slots.Length;
+    public NpcQueueMember FrontNpc => members.Count > 0 ? members[0] : null;
 
     public bool TryEnqueue(NpcQueueMember npc)
     {
@@ -34,8 +31,6 @@ public class NpcQueueManager : MonoBehaviour
 
         // Add the new NPC to the queue list
         members.Add(npc);
-
-        // NPC reference
         npc.SetManager(this);
 
         // Find which slot this NPC should move to
