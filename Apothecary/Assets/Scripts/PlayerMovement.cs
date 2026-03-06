@@ -87,4 +87,9 @@ public class PlayerMovement : NetworkBehaviour
         // Move the player vertically
         cc.Move(velocity * Time.deltaTime);
     }
+    public void ResetMovementState()
+    {
+        // after spawning, remove vertical velicity
+        velocity = Vector3.zero;
+    }
 }

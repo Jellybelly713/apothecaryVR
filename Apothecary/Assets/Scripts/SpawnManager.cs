@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    // Spawn points
     [SerializeField] private Transform[] spawnPoints;
 
-    //first player gets spawn 0, the second gets spawn 1.
+    // Tracks player join order so spawn positions stay consistent
     private readonly List<ulong> joinOrder = new List<ulong>();
 
     private void Awake()
     {
-        // Register callbacks with the NetworkManager when script starts
-
-        // Called when a new client requests to connect
+        // networking callbacks
         NetworkManager.Singleton.ConnectionApprovalCallback += Approval;
-
-        // Called after a client connects
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-
-        // Called when a client disconnects
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
     }
 
     private void OnDestroy()
     {
-        // Remove callbacks when the object is destroyed
-
+        // Unregister callbacks when this object is destroyed
         if (NetworkManager.Singleton == null) return;
 
         NetworkManager.Singleton.ConnectionApprovalCallback -= Approval;
@@ -34,38 +28,36 @@ public class SpawnManager : MonoBehaviour
         NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
     }
 
-    // connection approval for incoming clients
     private void Approval(NetworkManager.ConnectionApprovalRequest req, NetworkManager.ConnectionApprovalResponse res)
     {
-        // Allow all connections
+        // all players can connect
         res.Approved = true;
 
-        // disable automatic player spawning to manually spawn players at specific spawn points
+        // Disable automatic player spawning since its manual
         res.CreatePlayerObject = false;
     }
 
-    // Called whenever a client connects
     private void OnClientConnected(ulong clientId)
     {
-        // Only the server should control spawning logic
+        // Only the server should spawn players
         if (!NetworkManager.Singleton.IsServer) return;
 
-        // Make sure spawn points exist
+        // Make sure spawn points are assigned
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
             Debug.LogError("No spawnPoints assigned on SpawnManager.");
             return;
         }
 
+        // Track join order
         if (!joinOrder.Contains(clientId))
             joinOrder.Add(clientId);
 
-        // First player = slot 0, second player = slot 1, etc.
+        // First player = slot 0, second = slot 1
         int slot = Mathf.Clamp(joinOrder.IndexOf(clientId), 0, spawnPoints.Length - 1);
 
-        // Get the player prefab from the NetworkManager
+        // Get the player prefab from NetworkManager
         var prefab = NetworkManager.Singleton.NetworkConfig.PlayerPrefab;
-
         if (prefab == null)
         {
             Debug.LogError("PlayerPrefab not set on NetworkManager.");
@@ -74,29 +66,47 @@ public class SpawnManager : MonoBehaviour
 
         Transform sp = spawnPoints[slot];
 
-        // Instantiate the player object at spawn position
-        var playerObj = Instantiate(prefab, sp.position, sp.rotation);
+        // raise the spawn position so the player doesn't clip into the floor
+        Vector3 spawnPos = sp.position + Vector3.up * 0.75f;
+        Quaternion spawnRot = sp.rotation;
 
-        // Get the NetworkObject component
+        // Create player object
+        var playerObj = Instantiate(prefab, spawnPos, spawnRot);
+
+        // Temporarily disable CharacterController so it doesnt mess with the spawn position
+        var cc = playerObj.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+
+        // Force spawn position and rotation
+        playerObj.transform.SetPositionAndRotation(spawnPos, spawnRot);
+
+        // Reset movement values after spawning
+        var movement = playerObj.GetComponent<PlayerMovement>();
+        if (movement != null)
+        {
+            movement.ResetMovementState();
+        }
+
+        // enable CharacterController again
+        if (cc != null) cc.enabled = true;
+
+        // Spawn the networked player object
         var netObj = playerObj.GetComponent<NetworkObject>();
         netObj.SpawnAsPlayerObject(clientId, true);
 
-        // which character model this player should use
+        // Assign which character model
         var visual = playerObj.GetComponent<PlayerCharacterVisual>();
-
         if (visual != null)
         {
-            // Host = Mage_01, client =Mage_02
+            // Host = Mage_01, client = Mage_02
             int id = (clientId == NetworkManager.ServerClientId) ? 0 : 1;
-
             visual.SetCharacterServer(id);
         }
     }
 
-    // Called when a client disconnects from the server
     private void OnClientDisconnected(ulong clientId)
     {
-        // Remove the player from the join order list
+        // Remove disconnected player from join order tracking
         joinOrder.Remove(clientId);
     }
 }

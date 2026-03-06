@@ -232,8 +232,6 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   mage01: {fileID: 5239537693720166505}
   mage02: {fileID: 8566294872787248060}
-  characterId:
-    m_InternalValue: 0
 --- !u!1 &336526823537525772
 GameObject:
   m_ObjectHideFlags: 0
