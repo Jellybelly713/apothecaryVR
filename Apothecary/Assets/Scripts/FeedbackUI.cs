@@ -6,7 +6,7 @@ public class FeedbackUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text feedbackText;
 
-    // How long each message should stay visible
+    // How long each message stays visible
     [SerializeField] private float showTime = 2f;
 
     private Coroutine currentRoutine;

@@ -8,18 +8,13 @@ public class CustomerOrder : MonoBehaviour
     public class Order
     {
         public string itemName;
-
         public string displayName;
-
         public Sprite icon;
     }
 
     public Order[] possibleOrders;
-
     public Order currentOrder;
-
     public Transform orderDisplayPoint;
-
     public TMP_Text orderText;
     public Image orderImage;
 

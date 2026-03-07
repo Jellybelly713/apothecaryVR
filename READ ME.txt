@@ -1,0 +1,36 @@
+Overview
+
+This is a multiplayer potion brewing game built using Netcode for GameObjects. Two players can join the same session and work together to brew potions and serve customers. Player 1 presses 'H' to enter, then Player 2 presses 'C' to also enter the game.  Players pick up ingredients from the environment, drop them into a cauldron, and interact with the cauldron to attempt to brew a potion. If the correct combination of ingredients is added, a potion is created and can be delivered to a customer. Each customer has a randomly generated order displayed above their head using an icon and text. The player can either work together or compete to make the potions and bring them to the delivery zone in front of the customer to successfully complete the order.
+
+The main interaction systems include picking up and dropping objects, adding ingredients to the cauldron, brewing recipes, and delivering potions to customers in a queue. The queue system moves NPC customers forward as orders are completed. The game also includes visual and audio feedback so players know when ingredients are added, when a recipe succeeds or fails, and when a correct or incorrect order is delivered.
+
+The overall design focuses on simple collaborative gameplay where players can coordinate ingredient gathering and potion brewing to serve customers. The interaction system uses raycasting for player interaction, allowing players to pick up items and interact with objects in the world using a single input key.
+
+
+Challenges
+
+One of the main challenges was implementing the interaction system so that players could both interact with world objects and pick up items using the same control. Designing a system that first checks if an object is a pickup item and, if not, checks whether it is an interactable object such as the cauldron. This worked with raycasting and object hierarchies took some testing and debugging.
+
+Another challenge was implementing the recipe system for the cauldron. The system needed to check if the ingredients placed in the cauldron matched one of the available recipes regardless of the order they were added. I created a matching system that compares ingredient lists and removes matched elements to confirm that the combination is correct.
+
+Managing the NPC queue system was also difficult. When a customer is served, the system removes the first NPC in the list and moves the remaining NPCs forward in the queue.
+
+I also wanted to add sound queues for interactions but i couldn't find ones that I liked T_T (Time: 10:26pm March 6th)
+
+
+What Went Well
+
+I used free assets this time and I was able to put more time in the Game Logic.
+
+The feedback systems worked well. Visual feedback through UI messages and order icons helps players understand what is happening in the game.
+
+Another positive was integrating Unity Netcode for GameObjects to support multiplayer interaction. Both players can interact with the environment, brew potions, and serve customers together.
+
+GitHub Repo: https://github.com/Jellybelly713/apothecaryVR 
+
+External Resources: 
+
+1: https://assetstore.unity.com/packages/3d/props/weapons/low-poly-weapons-71680
+2: https://assetstore.unity.com/packages/3d/props/low-poly-simple-medieval-props-258397
+3: https://assetstore.unity.com/packages/3d/characters/free-low-poly-cubic-humans-3d-by-shokubutsu-326752
+4: https://assetstore.unity.com/packages/3d/environments/dungeons/low-poly-dungeons-lite-177937
