@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4405769795409652612}
   - component: {fileID: 7475000363470611765}
   - component: {fileID: -4023189850669738995}
+  - component: {fileID: 130990328531955386}
   m_Layer: 0
   m_Name: Fish Tail
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Fish Tail
+  itemId: fish_tail
+  displayName: Fish Tail
+  icon: {fileID: 21300000, guid: cd0b86a3b5f672643849a11c16616c5e, type: 3}
 --- !u!65 &7475000363470611765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &130990328531955386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089387577006291611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

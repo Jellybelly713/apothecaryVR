@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5108750074169356968}
   - component: {fileID: 4444944508108530861}
   - component: {fileID: -7132920231132450503}
+  - component: {fileID: 9218103182055422582}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Carrot
+  itemId: carrot
+  displayName: Carrot
+  icon: {fileID: 21300000, guid: 665f9694e00405c4fbfafb902bf30619, type: 3}
 --- !u!65 &4444944508108530861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9218103182055422582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831710013090020145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

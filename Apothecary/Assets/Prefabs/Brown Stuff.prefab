@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8903173068285465822}
   - component: {fileID: 7355584270256372232}
   - component: {fileID: 3100698911020239591}
+  - component: {fileID: 2180656411713239366}
   m_Layer: 0
   m_Name: Brown Stuff
   m_TagString: Untagged
@@ -29,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188856745385242263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.28, y: 0.113680765, z: 0.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35476, y: 0.35476, z: 0.35476}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Brown Stuff
+  itemId: brown_stuff
+  displayName: Brown Stuff
+  icon: {fileID: 21300000, guid: 22422167d5cb15f45a9e51445de474f0, type: 3}
 --- !u!65 &7355584270256372232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2180656411713239366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188856745385242263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

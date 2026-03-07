@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1460616292878402108}
   - component: {fileID: 7177481214510288855}
   - component: {fileID: 5862356579911838181}
+  - component: {fileID: -3529224152445999966}
   m_Layer: 0
   m_Name: Twisted Fish
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Twisted Fish
+  itemId: twisted_fish
+  displayName: Twisted Fish
+  icon: {fileID: 21300000, guid: a5d9f15ff03674f47a391086717a6354, type: 3}
 --- !u!65 &7177481214510288855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3529224152445999966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593491621351903427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

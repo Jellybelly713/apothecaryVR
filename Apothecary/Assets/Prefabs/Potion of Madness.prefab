@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 2b5e4dcfbc9c54f019932d7dc34a1d4e, type: 3}
       propertyPath: m_Name
-      value: Potion_Berserk
+      value: Potion of Madness
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2b5e4dcfbc9c54f019932d7dc34a1d4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,6 +73,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 2b5e4dcfbc9c54f019932d7dc34a1d4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7391750962140820950}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 2b5e4dcfbc9c54f019932d7dc34a1d4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3139057603601451006}
   m_SourcePrefab: {fileID: 100100000, guid: 2b5e4dcfbc9c54f019932d7dc34a1d4e, type: 3}
 --- !u!1 &1600993339324765915 stripped
 GameObject:
@@ -91,7 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Potion of Madness
+  itemId: potion_of_madness
+  displayName: Potion of Madness
+  icon: {fileID: 21300000, guid: 9df5b6a9b12b4d94d82e4b091189744f, type: 3}
 --- !u!65 &3607926201979343391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -140,3 +145,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3139057603601451006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600993339324765915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

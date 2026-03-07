@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4949302854287244246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6595893006389125796}
+  - component: {fileID: 1821230218404779892}
+  - component: {fileID: 1113267260190727907}
+  m_Layer: 0
+  m_Name: CauldronInside
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6595893006389125796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949302854287244246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8560168137795056564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821230218404779892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949302854287244246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcaeeab1abc71e44ab3cb264970bef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cauldron: {fileID: 8924293786732693038}
+--- !u!65 &1113267260190727907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949302854287244246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79448414, y: 0.5866116, z: 0.7861573}
+  m_Center: {x: 0.001021862, y: 0.42806393, z: -0.012175292}
+--- !u!1 &5098003207185068979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2331209545664514317}
+  m_Layer: 0
+  m_Name: resultSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2331209545664514317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098003207185068979}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.009, y: 1.026, z: 0.867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8560168137795056564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8560168137795022740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8560168137795056564}
+  - component: {fileID: 8560168137793762196}
+  - component: {fileID: 8560168137792762196}
+  - component: {fileID: 8924293786732693038}
+  m_Layer: 0
+  m_Name: Cauldron
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8560168137795056564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560168137795022740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.21, y: 0.0014916416, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2331209545664514317}
+  - {fileID: 6595893006389125796}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8560168137793762196
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560168137795022740}
+  m_Mesh: {fileID: 4300000, guid: ea68aa111adc3264f9968657e12cc86a, type: 3}
+--- !u!23 &8560168137792762196
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560168137795022740}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1cd4a02342679ed4eb72a4397f64de4c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8924293786732693038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560168137795022740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da20adf53443d1c499339902a4966929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - recipeName: Bottle1
+    ingredientIds:
+    - beet
+    - carrot
+    - apple
+    - potato
+    - tomato
+    resultPrefab: {fileID: 2417371072770584266, guid: 76f0b4131fedf0549b63ab4eb855018b, type: 3}
+    resultDisplayName: Health Potion
+  - recipeName: Bottle2
+    ingredientIds:
+    - cucumber
+    - eggplant
+    - fish
+    - fish_tail
+    - white_egg
+    resultPrefab: {fileID: 7661234989857487050, guid: d478d7e0977b9984ea042f694454b45a, type: 3}
+    resultDisplayName: Mana Potion
+  - recipeName: Bottle3
+    ingredientIds:
+    - apple
+    - carrot
+    - cucumber
+    - potato
+    - round_loaf
+    resultPrefab: {fileID: 7450882268671180022, guid: 578eb0a775722d544be6c32870814d48, type: 3}
+    resultDisplayName: Stamina Potion
+  - recipeName: Bottle4
+    ingredientIds:
+    - eggplant
+    - fish_tail
+    - sausage
+    - twisted_fish
+    - white_egg
+    resultPrefab: {fileID: 3286508355322370628, guid: 0ddf69b14b8c7724ca913a88caa8bace, type: 3}
+    resultDisplayName: posion
+  - recipeName: Bottle5
+    ingredientIds:
+    - coin
+    - coin
+    - apple
+    - brown_stuff
+    - cheese
+    resultPrefab: {fileID: 2417371072770584266, guid: 45eb288b4c3c15f4bb1a0591eaa097ab, type: 3}
+    resultDisplayName: Get Rich Potion
+  - recipeName: Bottle6
+    ingredientIds:
+    - pile_of_sausage
+    - beet
+    - long_loaf
+    - brown_stuff
+    - cheese
+    resultPrefab: {fileID: 7661234989857487050, guid: 44c76bc1dfb9b4a4f8b9df64d5c39c26, type: 3}
+    resultDisplayName: Get Rich Potion
+  - recipeName: Bottle7
+    ingredientIds:
+    - white_stuff
+    - white_egg
+    - sword_fish
+    - watermelon
+    - cheese
+    resultPrefab: {fileID: 7450882268671180022, guid: 46222abe46df12e4ca367ab5d6f90282, type: 3}
+    resultDisplayName: Get Rich Potion
+  - recipeName: Bottle8
+    ingredientIds:
+    - pastry
+    - onion
+    - book
+    - pretzel
+    - smal_meat
+    resultPrefab: {fileID: 3286508355322370628, guid: ef46d9b42aa7a424c82c72473e4a6269, type: 3}
+    resultDisplayName: Confusion Potion
+  currentIngredients: []
+  resultSpawnPoint: {fileID: 2331209545664514317}
+  feedbackUI: {fileID: 0}
+  maxIngredients: 5

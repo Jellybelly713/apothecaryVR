@@ -33,10 +33,8 @@ public class NpcQueueManager : MonoBehaviour
         members.Add(npc);
         npc.SetManager(this);
 
-        // Find which slot this NPC should move to
+        // Tells which slot the NPC should move to
         int slotIndex = GetSlotIndexForMember(members.Count - 1);
-
-        // Tell the NPC to go to next slot
         npc.MoveTo(slots[slotIndex].position, slots[slotIndex].rotation, glideSpeed);
 
         return true;
@@ -48,12 +46,15 @@ public class NpcQueueManager : MonoBehaviour
 
         if (isShifting) return;
 
+        //Dont start shift if its already happening
         var served = members[0];
 
+        //remove fromt NPC from front of the queue
         members.RemoveAt(0);
-
+    
         served.OnServed();
 
+        // shiftrest of the line forward
         StartCoroutine(ShiftLine());
     }
 

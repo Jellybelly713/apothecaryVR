@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3765522158574753113}
   - component: {fileID: 6442571032315627484}
   - component: {fileID: 6571177423627971901}
+  - component: {fileID: 7992345616414374495}
   m_Layer: 0
   m_Name: Sword Fish
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Sword Fish
+  itemId: sword_fish
+  displayName: Sword Fish
+  icon: {fileID: 21300000, guid: 57c0751e7f36f184c84fd6cb398ac1fe, type: 3}
 --- !u!65 &6442571032315627484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7992345616414374495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640353377944029368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 541731510860374521}
   - component: {fileID: 7313709012656538331}
   - component: {fileID: 9039392938926316694}
+  - component: {fileID: -8232013045330842386}
   m_Layer: 0
   m_Name: Long Loaf
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39843aa9c8b5168419701336e5e44539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Long Loaf
+  itemId: long_loaf
+  displayName: Long Loaf
+  icon: {fileID: 21300000, guid: fc7916f4121d2574b944da713545ac5d, type: 3}
 --- !u!65 &7313709012656538331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +153,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8232013045330842386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224084807291885985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eff4fb44f29444db0e5afd02d95d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,34 +4,57 @@ public class DeliveryZone : MonoBehaviour
 {
     [SerializeField] private NpcQueueManager queue;
 
+    [SerializeField] private FeedbackUI feedbackUI;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip correctDeliveryClip;
+    [SerializeField] private AudioClip wrongDeliveryClip;
+
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object entering zone is a deliverable
-        IngredientItem item = other.GetComponent<IngredientItem>();
+        IngredientItem item = other.GetComponentInParent<IngredientItem>();
         if (item == null) return;
 
-        // Get NPC at the front of the line
+        // Get the customer at the front of the queue
         NpcQueueMember frontNpc = queue != null ? queue.FrontNpc : null;
-        if (frontNpc == null) return;
-
-        // Get NPC's order
-        CustomerOrder order = frontNpc.GetComponent<CustomerOrder>();
-        if (order == null) return;
-
-        // Check if delivered item matches the requested order
-        if (order.CheckOrder(item.itemName))
+        if (frontNpc == null)
         {
-            Debug.Log("Correct item delivered: " + item.itemName);
+            if (feedbackUI != null)
+                feedbackUI.ShowMessage("No customer at the window");
+            return;
+        }
 
-            // Remove the delivered item
+        // Get that customers current order
+        CustomerOrder order = frontNpc.GetComponent<CustomerOrder>();
+        if (order == null)
+        {
+            if (feedbackUI != null)
+                feedbackUI.ShowMessage("Customer has no order");
+            return;
+        }
+
+        // Check whether the delivered item matches
+        if (order.CheckOrder(item.itemId))
+        {
+            if (feedbackUI != null)
+                feedbackUI.ShowMessage("Correct order delivered!");
+
+            if (audioSource != null && correctDeliveryClip != null)
+                audioSource.PlayOneShot(correctDeliveryClip);
+
+            // Remove the delivered item from the scene
             Destroy(other.gameObject);
 
-            // Serve the front NPC and shift the queue
+            // shift the costumer queue
             queue.ServeFrontNpc();
         }
         else
         {
-            Debug.Log("Wrong item delivered: " + item.itemName);
+            if (feedbackUI != null)
+                feedbackUI.ShowMessage("Wrong order");
+
+            if (audioSource != null && wrongDeliveryClip != null)
+                audioSource.PlayOneShot(wrongDeliveryClip);
         }
     }
 }

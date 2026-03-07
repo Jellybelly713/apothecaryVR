@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class IngredientItem : MonoBehaviour
 {
-    public string itemName;
+    public string itemId;
+    public string displayName;
+    public Sprite icon;
 }

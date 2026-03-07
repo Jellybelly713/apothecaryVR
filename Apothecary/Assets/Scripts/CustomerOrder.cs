@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomerOrder : MonoBehaviour
 {
@@ -6,13 +8,20 @@ public class CustomerOrder : MonoBehaviour
     public class Order
     {
         public string itemName;
-        public GameObject visualPrefab; //to show above head
+
+        public string displayName;
+
+        public Sprite icon;
     }
 
     public Order[] possibleOrders;
+
     public Order currentOrder;
 
-    public Transform orderDisplayPoint; // where the icon/text appears
+    public Transform orderDisplayPoint;
+
+    public TMP_Text orderText;
+    public Image orderImage;
 
     private void Start()
     {
@@ -21,16 +30,26 @@ public class CustomerOrder : MonoBehaviour
 
     void ChooseRandomOrder()
     {
-        if (possibleOrders.Length == 0) return;
+        if (possibleOrders == null || possibleOrders.Length == 0) return;
+
+        // Randomly choose one order from the list
         currentOrder = possibleOrders[Random.Range(0, possibleOrders.Length)];
 
-        // spawn a floating visual above their head here
-        if (currentOrder.visualPrefab && orderDisplayPoint)
-            Instantiate(currentOrder.visualPrefab, orderDisplayPoint.position, Quaternion.identity, orderDisplayPoint);
+        // Update text
+        if (orderText != null)
+            orderText.text = currentOrder.displayName;
+
+        // Update the icon
+        if (orderImage != null)
+        {
+            orderImage.sprite = currentOrder.icon;
+            orderImage.enabled = currentOrder.icon != null;
+        }
     }
 
     public bool CheckOrder(string deliveredItem)
     {
-        return deliveredItem == currentOrder.itemName;
+        // Return true only if the delivered item matches
+        return currentOrder != null && deliveredItem == currentOrder.itemName;
     }
 }

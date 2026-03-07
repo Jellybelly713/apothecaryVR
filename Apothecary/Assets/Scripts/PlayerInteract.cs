@@ -6,33 +6,74 @@ public class PlayerInteract : NetworkBehaviour
 {
     public Transform rayOrigin;
 
-    // Max distance the player can interact
-    public float interactDistance = 2.5f;
+    public float interactDistance = 3f;
+
+    public Transform holdPoint;
+
+    private PickupItem heldItem;
 
     private void Update()
     {
-        // allows the local player (owner) to run interaction
         if (!IsOwner) return;
-        
+
         if (Keyboard.current == null) return;
 
+        // E to interact
         if (Keyboard.current.eKey.wasPressedThisFrame)
-            TryInteract();
+        {
+            // If holding an item, drop it
+            if (heldItem != null)
+            {
+                DropHeldItem();
+            }
+            else
+            {
+                TryPickupOrInteract();
+            }
+        }
     }
 
-    private void TryInteract()
+    private void TryPickupOrInteract()
     {
-        // If the ray origin is not assigned, do nothing
         if (rayOrigin == null) return;
 
-        // Create a ray that starts at rayOrigin and points forward
+        // Ray pointing forward from the player
         Ray ray = new Ray(rayOrigin.position, rayOrigin.forward);
 
         if (!Physics.Raycast(ray, out RaycastHit hit, interactDistance)) return;
 
-        // Check if the object hit has an interactable component
+        // check if the object is something we can pick up
+        PickupItem pickup = hit.collider.GetComponentInParent<PickupItem>();
+        if (pickup != null)
+        {
+            PickUpItem(pickup);
+            return;
+        }
+
         var interactable = hit.collider.GetComponentInParent<Interactable>();
 
         interactable?.Interact();
+    }
+
+    private void PickUpItem(PickupItem item)
+    {
+        if (item == null) return;
+        if (heldItem != null) return;
+        if (holdPoint == null) return;
+
+        heldItem = item;
+
+        // Tells item to attach itself to the player
+        heldItem.PickUp(holdPoint);
+    }
+
+    private void DropHeldItem()
+    {
+        if (heldItem == null) return;
+
+        // drop and re-enable physics
+        heldItem.Drop();
+
+        heldItem = null;
     }
 }
