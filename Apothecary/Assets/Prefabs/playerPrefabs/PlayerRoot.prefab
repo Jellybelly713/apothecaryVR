@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5717328633304941108}
   - component: {fileID: 4442812923185032548}
   - component: {fileID: 473315246540115502}
+  - component: {fileID: -7021447193722492343}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Untagged
@@ -233,6 +234,21 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   mage01: {fileID: 5239537693720166505}
   mage02: {fileID: 8566294872787248060}
+--- !u!114 &-7021447193722492343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96278139248657470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c9b948bafb1b34d995d52998633724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  visualWorld: {fileID: 498032488694697158}
+  visualSelf: {fileID: 0}
 --- !u!1 &336526823537525772
 GameObject:
   m_ObjectHideFlags: 0
